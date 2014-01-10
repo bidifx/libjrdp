@@ -29,7 +29,7 @@ import java.io.IOException;
 class ConstrainedWholeNumberHelper {
     private final static Logger logger = LogManager.getLogger(ConstrainedWholeNumberHelper.class);
 
-    private static int getBitFieldSize(int range) {
+    private static int getBitFieldSize(long range) {
         if (range > 255)
             throw new IllegalArgumentException("Range too large: bit-field case only for range <= 255!");
 
@@ -43,13 +43,13 @@ class ConstrainedWholeNumberHelper {
         else return 8;
     }
 
-    public static void encode(ASN1PerEncoder encoder, int value, int lowerBound, int upperBound) throws IOException {
+    public static void encode(ASN1PerEncoder encoder, long value, long lowerBound, long upperBound) throws IOException {
         if (value < lowerBound)
             throw new IllegalArgumentException("Value is less than lower bound.");
         if (value > upperBound)
             throw new IllegalArgumentException("Value is greater than upper bound.");
 
-        int range = upperBound - lowerBound + 1;
+        long range = upperBound - lowerBound + 1;
         logger.trace("encode - value: {}, lowerBound: {}, upperBound: {}, range: {}", value, lowerBound, upperBound, range);
 
         if (range == 1) {
@@ -62,26 +62,26 @@ class ConstrainedWholeNumberHelper {
             int bits = getBitFieldSize(range);
 
 
-            int raw = value - lowerBound;
+            int raw = (int) (value - lowerBound);
             logger.trace("encode - bit-field case, bits: {}, raw: 0b{}, value: {}", bits, String.format("%" + bits + "s", Integer.toBinaryString(raw)).replace(' ', '0'), value);
             encoder.writeBit(raw, bits);
 
             // b) "range" is exactly 256 (the one-octet case);
         } else if (range == 256) {
 
-            int raw = value - lowerBound;
+            long raw = value - lowerBound;
             logger.trace("encode - one-octet case, raw: {}, value: {}", raw, value);
             encoder.writePadding();
-            encoder.write(raw & 0xFF);
+            encoder.write((int) (raw & 0xFF));
 
             // c) "range" is greater than 256 and less than or equal to 64K (the two-octet case);
         } else if (range <= 65536) {
-            int raw = value - lowerBound;
+            long raw = value - lowerBound;
 
             logger.trace("encode - two-octet case, raw: {}, value: {}", raw, value);
             encoder.writePadding();
-            int a = (raw >> 8) & 0xFF;
-            int b = raw & 0xFF;
+            int a = (int) ((raw >> 8) & 0xFF);
+            int b = (int) (raw & 0xFF);
             encoder.write(a);
             encoder.write(b);
 
@@ -90,8 +90,8 @@ class ConstrainedWholeNumberHelper {
         }
     }
 
-    public static int decode(ASN1PerDecoder decoder, int lowerBound, int upperBound) throws IOException {
-        int range = upperBound - lowerBound + 1;
+    public static long decode(ASN1PerDecoder decoder, long lowerBound, long upperBound) throws IOException {
+        long range = upperBound - lowerBound + 1;
         logger.trace("decode - lowerBound: {}, upperBound: {}", lowerBound, upperBound);
 
         if (range == 1)
@@ -109,7 +109,7 @@ class ConstrainedWholeNumberHelper {
         } else if (range == 256) {
             decoder.skipPadding();
             int raw = decoder.read();
-            int value = raw + lowerBound;
+            long value = raw + lowerBound;
             logger.trace("decode - one-octet case, raw: {}, value: {}", raw, value);
             return value;
 
@@ -119,7 +119,7 @@ class ConstrainedWholeNumberHelper {
             int a = decoder.read();
             int b = decoder.read();
             int raw = ((a << 8) | (b & 0xFF)) & 0xFFFF;
-            int value = raw + lowerBound;
+            long value = raw + lowerBound;
             logger.trace("encode - two-octet case, raw: {}, value: {}", raw, value);
             return value;
         } else {

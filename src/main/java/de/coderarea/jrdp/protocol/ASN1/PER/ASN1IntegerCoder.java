@@ -56,8 +56,8 @@ class ASN1IntegerCoder extends ASN1ObjectCoder<ASN1Integer> {
         if (type.isAnnotationPresent(ASN1ValueConstraint.class)) {
             ASN1ValueConstraint constraint = type.getAnnotation(ASN1ValueConstraint.class);
             // TODO: need semi-constraint numbers.
-            Integer lb = constraint.lb();//== Integer.MIN_VALUE ? null : constraint.lb();
-            Integer ub = constraint.ub();//== Integer.MAX_VALUE ? null : constraint.ub();
+            Long lb = constraint.lb();//== Integer.MIN_VALUE ? null : constraint.lb();
+            Long ub = constraint.ub();//== Integer.MAX_VALUE ? null : constraint.ub();
             logger.trace("decoding constrained integer - lb: {}, ub: {}, value: {}", lb, ub, obj.getValue());
             obj.setValue(ConstrainedWholeNumberHelper.decode(decoder, lb, ub));
         } else {

@@ -29,7 +29,7 @@ import java.io.IOException;
 class UnconstrainedWholeNumberHelper {
     private final static Logger logger = LogManager.getLogger(UnconstrainedWholeNumberHelper.class);
 
-    public static void encode(ASN1PerEncoder encoder, int value) throws IOException {
+    public static void encode(ASN1PerEncoder encoder, long value) throws IOException {
 
         /**
          * A minimum octet 2's-complement-binary-integer encoding of the whole number has a field-width that is a
@@ -56,11 +56,11 @@ class UnconstrainedWholeNumberHelper {
         logger.trace("encode - bytes: {}, value: {}", len, value);
         LengthDeterminantHelper.encode(encoder, len);
         for (int i = idx; i >= 0; i--) {
-            encoder.write((value >> (8 * i)) & 0xFF);
+            encoder.write((int) ((value >> (8 * i)) & 0xFF));
         }
     }
 
-    public static int decode(ASN1PerDecoder decoder) throws IOException {
+    public static long decode(ASN1PerDecoder decoder) throws IOException {
         int length = LengthDeterminantHelper.decode(decoder);
         logger.trace("encode - bytes: {}", length);
         int value = 0;

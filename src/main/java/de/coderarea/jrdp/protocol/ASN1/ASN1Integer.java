@@ -24,20 +24,20 @@ package de.coderarea.jrdp.protocol.ASN1;
  */
 
 public class ASN1Integer extends ASN1Object {
-    private int value;
+    private long value;
 
     public ASN1Integer() {
     }
 
-    public ASN1Integer(int value) {
+    public ASN1Integer(long value) {
         this.value = value;
     }
 
-    public int getValue() {
+    public long getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    public void setValue(long value) {
         this.value = value;
     }
 

@@ -31,11 +31,11 @@ public @interface ASN1ValueConstraint {
      * Lower Bound
      * @return lower bound
      */
-    int lb() default Integer.MIN_VALUE;
+    long lb() default Long.MIN_VALUE;
 
     /**
      * Upper Bound
      * @return upper bound
      */
-    int ub() default Integer.MAX_VALUE;
+    long ub() default Long.MAX_VALUE;
 }
