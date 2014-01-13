@@ -14,14 +14,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with libjrdp. If not, see <http://www.gnu.org/licenses/>.
  */
-package de.coderarea.jrdp.protocol.TS;
+package de.coderarea.jrdp.protocol.PDU.TS;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * Base class for TS_UD_*
+ * Abstract base class for TS packets.
  *
  * @author Sascha Biedermann
  */

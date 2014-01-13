@@ -21,7 +21,7 @@ import de.coderarea.jrdp.protocol.ASN1.ASN1Encoder;
 import de.coderarea.jrdp.protocol.ASN1.ASN1EncodingRules;
 import de.coderarea.jrdp.protocol.ASN1.ASN1OctetString;
 import de.coderarea.jrdp.protocol.MCS.*;
-import de.coderarea.jrdp.protocol.TS.TsValidLicenseData;
+import de.coderarea.jrdp.protocol.PDU.TS.SEC.LIC.TsValidLicenseData;
 
 import java.io.ByteArrayOutputStream;
 

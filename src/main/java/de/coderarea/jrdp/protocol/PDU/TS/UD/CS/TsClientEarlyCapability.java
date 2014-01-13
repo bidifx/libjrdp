@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with libjrdp. If not, see <http://www.gnu.org/licenses/>.
  */
-package de.coderarea.jrdp.protocol.TS;
+package de.coderarea.jrdp.protocol.PDU.TS.UD.CS;
 
 import java.util.HashSet;
 import java.util.Set;

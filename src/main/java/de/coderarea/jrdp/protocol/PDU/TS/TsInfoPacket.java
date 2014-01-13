@@ -14,8 +14,10 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with libjrdp. If not, see <http://www.gnu.org/licenses/>.
  */
-package de.coderarea.jrdp.protocol.TS;
+package de.coderarea.jrdp.protocol.PDU.TS;
 
+import de.coderarea.jrdp.protocol.PDU.TS.SEC.TsBasicSecurityHeader;
+import de.coderarea.jrdp.protocol.PDU.TS.SEC.TsSecurityFlag;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -26,6 +28,11 @@ import java.io.UnsupportedEncodingException;
 import java.util.Set;
 
 /**
+ * Info Packet (TS_INFO_PACKET). <br/>
+ * The TS_INFO_PACKET structure contains extra information not passed to the server during the Basic Settings Exchange
+ * phase (see section 1.3.1.1) of the RDP Connection Sequence, primarily to ensure that it gets encrypted
+ * (as auto-logon password data and other sensitive information is passed here).
+ *
  * @author Sascha Biedermann
  */
 public class TsInfoPacket extends TsPacket {

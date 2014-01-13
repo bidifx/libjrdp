@@ -14,8 +14,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with libjrdp. If not, see <http://www.gnu.org/licenses/>.
  */
-package de.coderarea.jrdp.protocol.TS;
+package de.coderarea.jrdp.protocol.PDU.TS.UD.SC;
 
+import de.coderarea.jrdp.protocol.PDU.TS.UD.CS.TsClientEarlyCapability;
+import de.coderarea.jrdp.protocol.PDU.TS.UD.TsData;
+import de.coderarea.jrdp.protocol.PDU.TS.UD.TsUserDataHeader;
 import de.coderarea.jrdp.protocol.X224.RdpProtocol;
 
 import java.io.ByteArrayOutputStream;
@@ -25,8 +28,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Client Core Data (TS_UD_CS_CORE). <br/>
- * The TS_UD_CS_CORE data block contains core client connection-related information.
+ * Server Core Data (TS_UD_SC_CORE). <br/>
+ * The TS_UD_SC_CORE data block contains core server connection-related information.
  *
  * @author Sascha Biedermann
  */
