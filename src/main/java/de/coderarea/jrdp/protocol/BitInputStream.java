@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with libjrdp. If not, see <http://www.gnu.org/licenses/>.
  */
-package de.coderarea.jrdp.protocol.ASN1;
+package de.coderarea.jrdp.protocol;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

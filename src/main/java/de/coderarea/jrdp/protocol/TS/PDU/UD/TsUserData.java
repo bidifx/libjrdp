@@ -14,12 +14,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with libjrdp. If not, see <http://www.gnu.org/licenses/>.
  */
-package de.coderarea.jrdp.protocol.PDU.TS.UD;
+package de.coderarea.jrdp.protocol.TS.PDU.UD;
 
-import de.coderarea.jrdp.protocol.PDU.TS.UD.CS.TsClientClusterData;
-import de.coderarea.jrdp.protocol.PDU.TS.UD.CS.TsClientCoreData;
-import de.coderarea.jrdp.protocol.PDU.TS.UD.CS.TsClientNetworkData;
-import de.coderarea.jrdp.protocol.PDU.TS.UD.CS.TsClientSecurityData;
+import de.coderarea.jrdp.protocol.TS.PDU.UD.CS.TsClientClusterData;
+import de.coderarea.jrdp.protocol.TS.PDU.UD.CS.TsClientCoreData;
+import de.coderarea.jrdp.protocol.TS.PDU.UD.CS.TsClientNetworkData;
+import de.coderarea.jrdp.protocol.TS.PDU.UD.CS.TsClientSecurityData;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

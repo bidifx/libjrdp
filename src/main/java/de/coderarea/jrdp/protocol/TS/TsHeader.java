@@ -14,9 +14,8 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with libjrdp. If not, see <http://www.gnu.org/licenses/>.
  */
-package de.coderarea.jrdp.protocol.PDU.TS.UD;
+package de.coderarea.jrdp.protocol.TS;
 
-import de.coderarea.jrdp.protocol.PDU.TS.TsPacket;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -29,8 +28,8 @@ import java.io.OutputStream;
  *
  * @author Sascha Biedermann
  */
-public class TsUserDataHeader extends TsPacket {
-    private final static Logger logger = LogManager.getLogger(TsUserDataHeader.class);
+public class TsHeader extends TsPacket {
+    private final static Logger logger = LogManager.getLogger(TsHeader.class);
 
     /**
      * User Data Header has a constant size of 4 bytes.
@@ -66,12 +65,12 @@ public class TsUserDataHeader extends TsPacket {
     private TsUserDataType type;
     private int length;
 
-    public TsUserDataHeader(InputStream input) throws IOException {
+    public TsHeader(InputStream input) throws IOException {
         super(input);
         decode();
     }
 
-    public TsUserDataHeader(TsUserDataType type, int length) {
+    public TsHeader(TsUserDataType type, int length) {
         this.type = type;
         this.length = length + SIZE;
     }

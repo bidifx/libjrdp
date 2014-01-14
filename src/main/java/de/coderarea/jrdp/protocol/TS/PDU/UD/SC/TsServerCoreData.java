@@ -14,11 +14,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with libjrdp. If not, see <http://www.gnu.org/licenses/>.
  */
-package de.coderarea.jrdp.protocol.PDU.TS.UD.SC;
+package de.coderarea.jrdp.protocol.TS.PDU.UD.SC;
 
-import de.coderarea.jrdp.protocol.PDU.TS.UD.CS.TsClientEarlyCapability;
-import de.coderarea.jrdp.protocol.PDU.TS.UD.TsData;
-import de.coderarea.jrdp.protocol.PDU.TS.UD.TsUserDataHeader;
+import de.coderarea.jrdp.protocol.TS.PDU.UD.CS.TsClientEarlyCapability;
+import de.coderarea.jrdp.protocol.TS.PDU.UD.TsData;
+import de.coderarea.jrdp.protocol.TS.PDU.UD.TsUserDataHeader;
 import de.coderarea.jrdp.protocol.X224.RdpProtocol;
 
 import java.io.ByteArrayOutputStream;
