@@ -9,8 +9,8 @@
         <Logger name="de.coderarea.jrdp.protocol.T123" level="info"/>
         <Logger name="de.coderarea.jrdp.protocol.ASN1" level="info"/>
         <Logger name="de.coderarea.jrdp.protocol.ASN1.PER" level="info"/>
-        <Logger name="de.coderarea.jrdp.protocol.ASN1.BitInputStream" level="info"/>
-        <Logger name="de.coderarea.jrdp.protocol.ASN1.BitOutputStream" level="info"/>
+        <Logger name="de.coderarea.jrdp.protocol.BitInputStream" level="info"/>
+        <Logger name="de.coderarea.jrdp.protocol.BitOutputStream" level="info"/>
         <Logger name="de.coderarea.jrdp.protocol.GCC" level="debug"/>
         <root level="trace">
             <appender-ref ref="Console"/>

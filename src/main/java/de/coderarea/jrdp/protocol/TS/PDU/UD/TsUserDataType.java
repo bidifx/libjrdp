@@ -1,7 +1,7 @@
 package de.coderarea.jrdp.protocol.TS.PDU.UD;
 
 /**
-* de.coderarea.jrdp.protocol.TS.PDU.UD. <br/>
+* TsUserDataType. <br/>
 *
 * @author Sascha Bidermann
 */

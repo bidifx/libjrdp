@@ -18,6 +18,7 @@ package de.coderarea.jrdp.protocol.TS.PDU;
 
 import de.coderarea.jrdp.protocol.TS.PDU.SEC.TsBasicSecurityHeader;
 import de.coderarea.jrdp.protocol.TS.PDU.SEC.TsSecurityFlag;
+import de.coderarea.jrdp.protocol.TS.TsPacket;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

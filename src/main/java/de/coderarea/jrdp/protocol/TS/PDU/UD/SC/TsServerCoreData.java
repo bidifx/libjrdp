@@ -19,6 +19,7 @@ package de.coderarea.jrdp.protocol.TS.PDU.UD.SC;
 import de.coderarea.jrdp.protocol.TS.PDU.UD.CS.TsClientEarlyCapability;
 import de.coderarea.jrdp.protocol.TS.PDU.UD.TsData;
 import de.coderarea.jrdp.protocol.TS.PDU.UD.TsUserDataHeader;
+import de.coderarea.jrdp.protocol.TS.PDU.UD.TsUserDataType;
 import de.coderarea.jrdp.protocol.X224.RdpProtocol;
 
 import java.io.ByteArrayOutputStream;
@@ -72,7 +73,7 @@ public class TsServerCoreData extends TsData {
         }
         writeInteger(bufferStream, flag);
 
-        this.setHeader(new TsUserDataHeader(TsUserDataHeader.TsUserDataType.SC_CORE, bufferStream.size()));
+        this.setHeader(new TsUserDataHeader(TsUserDataType.SC_CORE, bufferStream.size()));
         this.getHeader().encode(output);
         output.write(bufferStream.toByteArray());
     }

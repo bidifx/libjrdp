@@ -16,7 +16,7 @@
  */
 package de.coderarea.jrdp.protocol.TS.PDU.SEC;
 
-import de.coderarea.jrdp.protocol.TS.PDU.TsPacket;
+import de.coderarea.jrdp.protocol.TS.TsPacket;
 
 import java.io.IOException;
 import java.io.InputStream;

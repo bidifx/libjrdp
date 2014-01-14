@@ -17,6 +17,7 @@
 package de.coderarea.jrdp.protocol.ASN1.PER;
 
 import de.coderarea.jrdp.protocol.ASN1.*;
+import de.coderarea.jrdp.protocol.BitOutputStream;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -78,35 +79,35 @@ public class ASN1PerEncoder extends ASN1Encoder {
     }
 
     /**
-     * @see de.coderarea.jrdp.protocol.ASN1.BitOutputStream#writeBit(int)
+     * @see de.coderarea.jrdp.protocol.BitOutputStream#writeBit(int)
      */
     protected void writeBit(int bit) throws IOException {
         output.writeBit(bit);
     }
 
     /**
-     * @see de.coderarea.jrdp.protocol.ASN1.BitOutputStream#writeBit(int, int)
+     * @see de.coderarea.jrdp.protocol.BitOutputStream#writeBit(int, int)
      */
     protected void writeBit(int bits, int n) throws IOException {
         output.writeBit(bits, n);
     }
 
     /**
-     * @see de.coderarea.jrdp.protocol.ASN1.BitOutputStream#write(int)
+     * @see de.coderarea.jrdp.protocol.BitOutputStream#write(int)
      */
     protected void write(int b) throws IOException {
         output.write(b);
     }
 
     /**
-     * @see de.coderarea.jrdp.protocol.ASN1.BitOutputStream#write(byte[])
+     * @see de.coderarea.jrdp.protocol.BitOutputStream#write(byte[])
      */
     protected void write(byte[] b) throws IOException {
         output.write(b);
     }
 
     /**
-     * @see de.coderarea.jrdp.protocol.ASN1.BitOutputStream#writePadding()
+     * @see de.coderarea.jrdp.protocol.BitOutputStream#writePadding()
      */
     protected int writePadding() throws IOException {
         return output.writePadding();

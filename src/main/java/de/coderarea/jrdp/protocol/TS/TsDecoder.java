@@ -1,6 +1,6 @@
 package de.coderarea.jrdp.protocol.TS;
 
-import de.coderarea.jrdp.protocol.ASN1.BitInputStream;
+import de.coderarea.jrdp.protocol.BitInputStream;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

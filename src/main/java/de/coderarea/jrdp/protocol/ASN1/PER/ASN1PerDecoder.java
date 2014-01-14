@@ -17,6 +17,7 @@
 package de.coderarea.jrdp.protocol.ASN1.PER;
 
 import de.coderarea.jrdp.protocol.ASN1.*;
+import de.coderarea.jrdp.protocol.BitInputStream;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -104,35 +105,35 @@ public class ASN1PerDecoder<T extends ASN1Object> extends ASN1Decoder<T> {
     }
 
     /**
-     * @see de.coderarea.jrdp.protocol.ASN1.BitInputStream#skipPadding()
+     * @see de.coderarea.jrdp.protocol.BitInputStream#skipPadding()
      */
     protected int skipPadding() throws IOException {
         return this.input.skipPadding();
     }
 
     /**
-     * @see de.coderarea.jrdp.protocol.ASN1.BitInputStream#readBit()
+     * @see de.coderarea.jrdp.protocol.BitInputStream#readBit()
      */
     protected int readBit() throws IOException {
         return this.input.readBit();
     }
 
     /**
-     * @see de.coderarea.jrdp.protocol.ASN1.BitInputStream#readBit(int)
+     * @see de.coderarea.jrdp.protocol.BitInputStream#readBit(int)
      */
     protected int readBit(int n) throws IOException {
         return this.input.readBit(n);
     }
 
     /**
-     * @see de.coderarea.jrdp.protocol.ASN1.BitInputStream#read()
+     * @see de.coderarea.jrdp.protocol.BitInputStream#read()
      */
     protected int read() throws IOException {
         return this.input.read();
     }
 
     /**
-     * @see de.coderarea.jrdp.protocol.ASN1.BitInputStream#read(byte[])
+     * @see de.coderarea.jrdp.protocol.BitInputStream#read(byte[])
      */
     protected int read(byte[] buffer) throws IOException {
         return this.input.read(buffer);

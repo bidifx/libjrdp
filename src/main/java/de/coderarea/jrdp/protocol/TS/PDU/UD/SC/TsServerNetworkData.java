@@ -18,6 +18,7 @@ package de.coderarea.jrdp.protocol.TS.PDU.UD.SC;
 
 import de.coderarea.jrdp.protocol.TS.PDU.UD.TsData;
 import de.coderarea.jrdp.protocol.TS.PDU.UD.TsUserDataHeader;
+import de.coderarea.jrdp.protocol.TS.PDU.UD.TsUserDataType;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -62,7 +63,7 @@ public class TsServerNetworkData extends TsData {
 
         assert bufferStream.size() % 4 != 0;
 
-        this.setHeader(new TsUserDataHeader(TsUserDataHeader.TsUserDataType.SC_NET, bufferStream.size()));
+        this.setHeader(new TsUserDataHeader(TsUserDataType.SC_NET, bufferStream.size()));
         this.getHeader().encode(output);
         output.write(bufferStream.toByteArray());
     }
